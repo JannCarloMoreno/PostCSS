@@ -8,7 +8,9 @@
   "author": "JannMoreno",
   "license": "ISC",
   "dependencies": {
-    "postcss-cli": "^6.1.1"
+    "autoprefixer": "^9.4.7",
+    "postcss-cli": "^6.1.1",
+    "postcss-preset-env": "^6.6.0"
   },
   "devDependencies": {},
   "description": ""
