@@ -1,6 +1,8 @@
 module.exports = {
 	plugins: [
 		/*require('postcss-image-set'),*/
+		require('postcss-color-hwb'),
+		require('postcss-color-mod-function'),
 		require('postcss-apply'),
 		require('postcss-custom-media')({
 			preserve: false,

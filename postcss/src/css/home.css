@@ -61,6 +61,11 @@ body {
     box-sizing: border-box;
     height: 100vh;
     overflow: auto;
+    /*background: color-mod(black alpha(50%) contrast(100%));*/
+    /*background: hwb(hue, whitness, blackness, (optional) alpha/opaciadad)*/
+    /*background: hwb(0-360, 0 - 100%, 0 - 100%, 0 - 100%)*/
+    /*background: hwb(230, 8%, 82%, 1);*/
+    /*background:gray(100); esra no sirve xd*/
   }
   
   /*Logo*/
