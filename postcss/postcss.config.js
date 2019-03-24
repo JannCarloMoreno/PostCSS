@@ -1,5 +1,6 @@
 module.exports = {
 	plugins: [
+		/*require('postcss-image-set'),*/
 		require('postcss-apply'),
 		require('postcss-custom-media')({
 			preserve: false,
