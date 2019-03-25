@@ -152,6 +152,29 @@ body {
     padding: 0 20px;
   }
   
+  .myPlaylist :link:hover,.myPlaylist :visited:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    color: hsl(29.5774647887324, 50%, 80%);
+  }
+  
+  .myPlaylist :-webkit-any-link:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    color: hsl(29.5774647887324, 50%, 80%);
+  }
+  
+  .myPlaylist :-moz-any-link:hover {
+    transform: scale(1.1);
+    color: hsl(29.5774647887324, 50%, 80%);
+  }
+  
+  .myPlaylist :any-link:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    color: hsl(29.5774647887324, 50%, 80%);
+  }
+
   .myPlaylist-item a {
     color: white;
     text-decoration: none;
@@ -168,6 +191,13 @@ body {
     text-decoration: underline;
   }
   
+  .myPlaylist-item:last-child, .myPlaylist-item:nth-of-type(3), .myPlaylist-item:first-child{
+    background: hsl(0, 100%, 80%);
+  }
+
+  .myPlaylist-item:not(:last-child):not(:nth-of-type(3)):not(:first-child){
+    background: hsl(240, 100%, 80%);
+  }
   /*playlistFriends*/
   
   .playlistFriends {
