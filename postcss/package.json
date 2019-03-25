@@ -14,6 +14,7 @@
     "postcss-color-hwb": "^3.0.0",
     "postcss-custom-media": "^7.0.7",
     "postcss-custom-selectors": "^5.1.2",
+    "postcss-font-magician": "^2.2.1",
     "postcss-image-set": "^1.0.0",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.6.0"

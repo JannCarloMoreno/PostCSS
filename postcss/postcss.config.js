@@ -1,6 +1,9 @@
 module.exports = {
 	plugins: [
 		/*require('postcss-image-set'),*/
+		require('postcss-font-magician')({
+			foundries: ['google'],
+		}),
 		require('postcss-import'),
 		require('postcss-custom-selectors'),
 		require('postcss-color-hwb'),
