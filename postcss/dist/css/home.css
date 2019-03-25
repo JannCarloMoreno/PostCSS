@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    /*font-family: 'Lato', sans-serif;*/
+    font-family: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
     overflow: hidden;
   }
   :root {
@@ -81,7 +82,7 @@ body {
     /*background: color-mod(black alpha(50%) contrast(100%));*/
     /*background: hwb(hue, whitness, blackness, (optional) alpha/opaciadad)*/
     /*background: hwb(0-360, 0 - 100%, 0 - 100%, 0 - 100%)*/
-    /*background: hwb(230, 8%, 82%, 1);*/
+    background: hwb(230, 8%, 82%, 1);
     /*background:gray(100); esra no sirve xd*/
   }
   
