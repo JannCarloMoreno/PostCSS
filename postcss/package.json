@@ -13,6 +13,7 @@
     "postcss-cli": "^6.1.1",
     "postcss-color-hwb": "^3.0.0",
     "postcss-custom-media": "^7.0.7",
+    "postcss-custom-selectors": "^5.1.2",
     "postcss-image-set": "^1.0.0",
     "postcss-preset-env": "^6.6.0"
   },
