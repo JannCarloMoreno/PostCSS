@@ -1,6 +1,7 @@
 module.exports = {
 	plugins: [
 		/*require('postcss-image-set'),*/
+		require('postcss-import'),
 		require('postcss-custom-selectors'),
 		require('postcss-color-hwb'),
 		require('postcss-color-mod-function'),

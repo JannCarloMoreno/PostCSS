@@ -1,0 +1,29 @@
+  /*home layout*/
+  .home {
+    background: var(--lightColor);
+    display: grid;
+    height: calc(var(--viewportHeight)*2);
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: 1fr 150px;
+    grid-template-areas: "sidebar primary"
+                         "sidebar featuring";
+    @media (--small){
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 150px;
+        grid-template-areas: "primary"
+                             "sidebar"
+                             "featuring";
+
+    }
+  }
+
+  .home-sidebar {
+    grid-area: sidebar;
+  }
+  .home-primary {
+    grid-area: primary;
+  }
+  .home-featuring {
+    grid-area: featuring;
+  }
