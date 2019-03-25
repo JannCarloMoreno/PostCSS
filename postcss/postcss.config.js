@@ -13,7 +13,8 @@ module.exports = {
 				grid: true,
 				flexbox: false,
 			},
-			preserve: true,// valor por defecto es true
+			preserve: true,
+			stage:1,// valor por defecto es true
 			calc: false,
 		})
 	]

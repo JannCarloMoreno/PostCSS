@@ -3,6 +3,9 @@ body {
     /*font-family: 'Lato', sans-serif;*/
     font-family: 'Lato', system-ui;
     /*overflow: hidden;*/
+    @media (--small){
+      border: 10px solid blue;
+    }
   }
   :root {
     --darkColor: #15192a;
@@ -21,11 +24,11 @@ body {
       border-bottom: 5px solid var(--lightColor)
     };
   }
-  
+
   .btn {
     @apply --button;
   }
-  
+
   .btn.warning {
     background: var(--warningColor);
   }
@@ -62,8 +65,17 @@ body {
     grid-template-rows: 1fr 150px;
     grid-template-areas: "sidebar primary"
                          "sidebar featuring";
+    @media (--small){
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 150px;
+        grid-template-areas: "primary"
+                             "sidebar"
+                             "featuring";
+
+    }
   }
-  
+
   .home-sidebar {
     grid-area: sidebar;
   }
@@ -73,7 +85,7 @@ body {
   .home-featuring {
     grid-area: featuring;
   }
-  
+
   /*Sidebar*/
   .sidebar {
     display: grid;
@@ -91,7 +103,7 @@ body {
     /*background: hwb(230, 8%, 82%, 1);*/
     /*background:gray(100); esra no sirve xd*/
   }
-  
+
   /*Logo*/
   .logo {
     width: calc(100% - 100px);
@@ -110,38 +122,43 @@ body {
   .logo-image img {
     max-width: 100%;
   }
-  
+
   .sidebarPlaylist {
     overflow: auto;
   }
-  
+
   /*myPlaylist*/
-  
+
   .myPlaylist {
     padding: 0 20px;
   }
-  
+
   .myPlaylist :any-link:hover {
     transform: scale(1.1);
     color: color-mod(peru l(80%) s(50%));
   }
 
-  .myPlaylist-item a {
-    color: white;
-    text-decoration: none;
-    font-size: .8em;
-    display: block;
-    margin-bottom: 7px;
+  .myPlaylist-item{
+
+    & a{
+      color:red;
+      text-decoration: none;
+      font-size: .8em;
+      display: block;
+      margin-bottom: 7px;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    &:last-child a{
+      margin-bottom: 0;
+    }
+    @nest .myPlaylist & {
+      border: 5px dashed pink;
+    }
   }
-  .myPlaylist-item:last-child a {
-    margin-bottom: 0;
-  }
-  
-  
-  .myPlaylist-item a:hover {
-    text-decoration: underline;
-  }
-  
+
+
   .myPlaylist-item:matches(:last-child, :nth-of-type(3), :first-child){
     background: color-mod(red l(80%));
   }
@@ -150,15 +167,15 @@ body {
     background: color-mod(blue l(80%));
   }
   /*playlistFriends*/
-  
+
   .playlistFriends {
     padding: 0;
   }
-  
+
   .playlistFriends-item {
     color: white;
   }
-  
+
   .playlistFriends-item {
     display: flex;
     margin-bottom: 7px;
@@ -173,19 +190,19 @@ body {
   .playlistFriends-item:hover a {
     text-decoration: underline;
   }
-  
+
   .playlistFriends-item img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
     margin-right: 10px;
   }
-  
+
   .playlistFriends-item span {
     display: inline-block;
   }
-  
-  
+
+
   .home-primary {
     display: grid;
     grid-template-areas: "search user"
@@ -195,12 +212,12 @@ body {
     padding: 10px;
     overflow: auto;
   }
-  
-  
+
+
   .search {
     grid-area: search;
   }
-  
+
   .search input {
     background: #f0f0f0;
     font-family: "Lato";
@@ -212,11 +229,11 @@ body {
     box-shadow: 0 0 10px #f0f0f0;
     box-sizing: border-box;;
   }
-  
+
   .primary-user {
     justify-self: end;
   }
-  
+
   .user p {
     display: flex;
     align-items: center;
@@ -230,7 +247,7 @@ body {
     border-radius: 50%;
     margin-right: 10px;
   }
-  
+
   .primary-list {
     grid-area: list;
     overflow: auto;
@@ -251,18 +268,18 @@ body {
     display: flex;
     overflow: auto;
   }
-  
+
   .primaryPlaylist-list .primaryPlaylistItem {
     margin-right: 10px;
   }
-  
+
   .primaryPlaylistItem {
     /*border: 1px solid blue;*/
   }
-  
+
   .primaryPlaylistItem-image {
   }
-  
+
   .primaryPlaylistItem img {
     width: 250px;
     height: 180px;
@@ -274,8 +291,8 @@ body {
     font-size: 14px;
     font-weight: normal;
   }
-  
-  
+
+
   .featuring {
     background: linear-gradient(to right, #ff0000, #ff458b);
     display: flex;
@@ -283,12 +300,19 @@ body {
     align-items: center;
     padding-left: 100px;
     color: white;
+    @media (--small){
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right:0;
+      height: 150px;
+    }
   }
-  
+
   .featuring-image {
     margin-right: 20px;
   }
-  
+
   .featuring-title {
     margin: 10px;
   }
@@ -304,7 +328,7 @@ body {
   @custom-media --large screen and (width >= 1024px);
 
   @media (--small){
-    body{
+    /*body{
       border: 10px solid blue;
     }
     .home{
@@ -321,7 +345,7 @@ body {
       left: 0;
       right:0;
       height: 150px;
-    }
+    }*/
   }
 
   @media (--extra-small){
@@ -333,5 +357,5 @@ body {
   }
 
   @media (--large){
-   
+
   }

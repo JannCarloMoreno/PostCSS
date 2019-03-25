@@ -1,16 +1,21 @@
 body {
     margin: 0;
     /*font-family: 'Lato', sans-serif;*/
-    font-family: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    font-family: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif
     /*overflow: hidden;*/
   }
+  @media screen and (max-width: 767px){
+  body {
+      border: 10px solid blue
+  }
+    }
   :root {
     --darkColor: #15192a;
     --lightColor: white;
     --warningColor: red;
     --viewportHeight: 50%;
   }
-  
+
   .btn {
   border: 1px solid white;
   border: 1px solid var(--lightColor);
@@ -25,7 +30,7 @@ body {
   border-bottom: 5px solid white;
   border-bottom: 5px solid var(--lightColor);
   }
-  
+
   .btn.warning {
     background: red;
     background: var(--warningColor);
@@ -67,9 +72,22 @@ body {
     -ms-grid-rows: 1fr 150px;
     grid-template-rows: 1fr 150px;
         grid-template-areas: "sidebar primary"
-                         "sidebar featuring";
+                         "sidebar featuring"
   }
-  
+  @media screen and (max-width: 767px){
+  .home {
+        height: auto;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: auto auto 150px;
+        grid-template-rows: auto auto 150px;
+            grid-template-areas: "primary"
+                             "sidebar"
+                             "featuring"
+  }
+
+    }
+
   .home-sidebar {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
@@ -86,7 +104,22 @@ body {
     -ms-grid-column: 2;
     grid-area: featuring;
   }
-  
+  @media screen and (max-width: 767px) {
+  .home-sidebar {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        -ms-grid-column: 1
+  }
+  .home-primary {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1
+  }
+  .home-featuring {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1
+  }
+}
+
   /*Sidebar*/
   .sidebar {
     display: -ms-grid;
@@ -108,7 +141,7 @@ body {
     /*background: hwb(230, 8%, 82%, 1);*/
     /*background:gray(100); esra no sirve xd*/
   }
-  
+
   /*Logo*/
   .logo {
     width: calc(100% - 100px);
@@ -141,56 +174,61 @@ body {
   .logo-image img {
     max-width: 100%;
   }
-  
+
   .sidebarPlaylist {
     overflow: auto;
   }
-  
+
   /*myPlaylist*/
-  
+
   .myPlaylist {
     padding: 0 20px;
   }
-  
+
   .myPlaylist :link:hover,.myPlaylist :visited:hover {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
     color: hsl(29.5774647887324, 50%, 80%);
   }
-  
+
   .myPlaylist :-webkit-any-link:hover {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
     color: hsl(29.5774647887324, 50%, 80%);
   }
-  
+
   .myPlaylist :-moz-any-link:hover {
     transform: scale(1.1);
     color: hsl(29.5774647887324, 50%, 80%);
   }
-  
+
   .myPlaylist :any-link:hover {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
     color: hsl(29.5774647887324, 50%, 80%);
   }
 
-  .myPlaylist-item a {
-    color: white;
-    text-decoration: none;
-    font-size: .8em;
-    display: block;
-    margin-bottom: 7px;
+  .myPlaylist-item a{
+      color:red;
+      text-decoration: none;
+      font-size: .8em;
+      display: block;
+      margin-bottom: 7px
+    }
+
+  .myPlaylist-item a:hover{
+        text-decoration: underline;
+      }
+
+  .myPlaylist-item:last-child a{
+      margin-bottom: 0;
+    }
+
+  .myPlaylist .myPlaylist-item{
+      border: 5px dashed pink
   }
-  .myPlaylist-item:last-child a {
-    margin-bottom: 0;
-  }
-  
-  
-  .myPlaylist-item a:hover {
-    text-decoration: underline;
-  }
-  
+
+
   .myPlaylist-item:last-child, .myPlaylist-item:nth-of-type(3), .myPlaylist-item:first-child{
     background: hsl(0, 100%, 80%);
   }
@@ -199,15 +237,15 @@ body {
     background: hsl(240, 100%, 80%);
   }
   /*playlistFriends*/
-  
+
   .playlistFriends {
     padding: 0;
   }
-  
+
   .playlistFriends-item {
     color: white;
   }
-  
+
   .playlistFriends-item {
     display: flex;
     margin-bottom: 7px;
@@ -222,19 +260,19 @@ body {
   .playlistFriends-item:hover a {
     text-decoration: underline;
   }
-  
+
   .playlistFriends-item img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
     margin-right: 10px;
   }
-  
+
   .playlistFriends-item span {
     display: inline-block;
   }
-  
-  
+
+
   .home-primary {
     display: -ms-grid;
     display: grid;
@@ -247,14 +285,14 @@ body {
     padding: 10px;
     overflow: auto;
   }
-  
-  
+
+
   .search {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: search;
   }
-  
+
   .search input {
     background: #f0f0f0;
     font-family: "Lato";
@@ -266,12 +304,12 @@ body {
     box-shadow: 0 0 10px #f0f0f0;
     box-sizing: border-box;;
   }
-  
+
   .primary-user {
     -ms-grid-column-align: end;
         justify-self: end;
   }
-  
+
   .user p {
     display: flex;
     align-items: center;
@@ -286,7 +324,7 @@ body {
     border-radius: 50%;
     margin-right: 10px;
   }
-  
+
   .primary-list {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
@@ -310,18 +348,18 @@ body {
     display: flex;
     overflow: auto;
   }
-  
+
   .primaryPlaylist-list .primaryPlaylistItem {
     margin-right: 10px;
   }
-  
+
   .primaryPlaylistItem {
     /*border: 1px solid blue;*/
   }
-  
+
   .primaryPlaylistItem-image {
   }
-  
+
   .primaryPlaylistItem img {
     width: 250px;
     height: 180px;
@@ -334,21 +372,34 @@ body {
     font-size: 14px;
     font-weight: normal;
   }
-  
-  
+
+
   .featuring {
     background: linear-gradient(to right, #ff0000, #ff458b);
     display: flex;
     height: 100%;
     align-items: center;
     padding-left: 100px;
-    color: white;
+    color: white
   }
-  
+
+
+  @media screen and (max-width: 767px){
+
+
+  .featuring {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right:0;
+      height: 150px
+  }
+    }
+
   .featuring-image {
     margin-right: 20px;
   }
-  
+
   .featuring-title {
     margin: 10px;
   }
@@ -360,16 +411,14 @@ body {
   /*@custom-media --small screen and (max-width: 768px);*/
 
   @media screen and (max-width: 767px){
-    body{
+    /*body{
       border: 10px solid blue;
     }
     .home{
       height: auto;
-      -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-      -ms-grid-rows: auto auto 150px;
       grid-template-rows: auto auto 150px;
-          grid-template-areas: "primary"
+      grid-template-areas: "primary"
                            "sidebar"
                            "featuring";
     }
@@ -379,20 +428,7 @@ body {
       left: 0;
       right:0;
       height: 150px;
-    }
-    .home-sidebar{
-        -ms-grid-row: 2;
-        -ms-grid-row-span: 1;
-        -ms-grid-column: 1;
-    }
-    .home-primary{
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-    }
-    .home-featuring{
-        -ms-grid-row: 3;
-        -ms-grid-column: 1;
-    }
+    }*/
   }
 
   @media screen and (max-width: 479px){
@@ -404,5 +440,5 @@ body {
   }
 
   @media screen and (min-width: 1024px){
-   
+
   }
