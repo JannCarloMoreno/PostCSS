@@ -20,7 +20,8 @@
     "postcss-preset-env": "^6.6.0"
   },
   "devDependencies": {
-    "postcss-color-mod-function": "^3.0.3"
+    "postcss-color-mod-function": "^3.0.3",
+    "stylelint": "^9.10.1"
   },
   "description": ""
 }

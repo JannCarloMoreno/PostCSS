@@ -4,7 +4,11 @@ module.exports = {
 		require('postcss-font-magician')({
 			foundries: ['google'],
 		}),
-		require('postcss-import'),
+		require('postcss-import')({
+			plugins: [
+				require('stylelint'),
+			]
+		}),
 		require('postcss-custom-selectors'),
 		require('postcss-color-hwb'),
 		require('postcss-color-mod-function'),
