@@ -30,6 +30,7 @@ module.exports = {
 			stage:1,// valor por defecto es true
 			calc: false,
 		}),
-		require('css-mqpacker')
+		require('css-mqpacker'),
+		require('cssnano')
 	]
 }
