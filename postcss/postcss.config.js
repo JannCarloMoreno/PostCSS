@@ -1,13 +1,18 @@
 module.exports = {
 	plugins: [
 		/*require('postcss-image-set'),*/
-		require('postcss-font-magician')({
-			foundries: ['google'],
-		}),
 		require('postcss-import')({
 			plugins: [
 				require('stylelint'),
 			]
+		}),
+		require('postcss-font-magician')({
+			variants: {
+				'Lato': {
+					'300': [],
+					'400': [],
+				}
+			}
 		}),
 		require('postcss-custom-selectors'),
 		require('postcss-color-hwb'),
@@ -24,6 +29,7 @@ module.exports = {
 			preserve: true,
 			stage:1,// valor por defecto es true
 			calc: false,
-		})
+		}),
+		require('css-mqpacker')
 	]
 }
